@@ -1,0 +1,2 @@
+a:1:{i:1;a:8:{s:12:"module_title";a:1:{i:1;s:4:"dddd";}s:11:"description";a:1:{i:1;s:145:"&lt;p&gt;&lt;img alt=&quot;&quot; src=&quot;/image/data/banner-sidebar.png&quot; style=&quot;width: 279px; height: 420px;&quot; /&gt;&lt;/p&gt;
+";}s:10:"show_title";s:1:"0";s:9:"layout_id";s:1:"1";s:8:"position";s:8:"showcase";s:6:"status";s:1:"1";s:12:"module_class";s:0:"";s:10:"sort_order";s:0:"";}}
