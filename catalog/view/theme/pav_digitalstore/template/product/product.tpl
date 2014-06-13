@@ -107,7 +107,7 @@
           <!-- AddThis Button END --> 
         </div>
 
-      <div class="description">
+      <div class="description products_right_conten">
         <?php if ($manufacturer) { ?>
         <span><?php echo $text_manufacturer; ?></span> <a href="<?php echo $manufacturers; ?>"><?php echo $manufacturer; ?></a><br />
         <?php } ?>

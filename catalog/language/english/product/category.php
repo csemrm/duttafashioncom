@@ -26,4 +26,15 @@ $_['text_rating_desc']  = 'Rating (Highest)';
 $_['text_model_asc']    = 'Model (A - Z)';
 $_['text_model_desc']   = 'Model (Z - A)';
 $_['text_limit']        = 'Show:';
+$_['text_reward']       = 'Reward Points:'; 
+$_['text_points']       = 'Price in reward points:';
+$_['text_stock']        = 'Availability:';
+$_['text_instock']      = 'In Stock';
+$_['text_price']        = 'Price:'; 
+$_['text_tax']          = 'Ex Tax:'; 
+$_['text_discount']     = '%s or more %s';
+$_['text_option']       = 'Available Options';
+$_['text_qty']          = 'Qty:';
+$_['text_minimum']      = 'This product has a minimum quantity of %s';
+
 ?>
