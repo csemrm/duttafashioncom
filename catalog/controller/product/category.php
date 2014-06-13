@@ -85,8 +85,9 @@ class ControllerProductCategory extends Controller {
 					);
 				}
 			}
-		} else {
-			$category_id = 0;
+		} else {$categories = $this->model_catalog_category->getCategories();
+                     
+			$category_id = $categories[0]['category_id'];
 		}
 
 		$category_info = $this->model_catalog_category->getCategory($category_id);
@@ -205,6 +206,7 @@ class ControllerProductCategory extends Controller {
 			$results = $this->model_catalog_product->getProducts($data);
 
 			foreach ($results as $result) {
+                            $this->redirect($this->url->link('product/product', 'product_id=' . $result['product_id']));
 				if ($result['image']) {
 					$image = $this->model_tool_image->resize($result['image'], $this->config->get('config_image_product_width'), $this->config->get('config_image_product_height'));
 				} else {

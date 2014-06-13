@@ -42,7 +42,9 @@ class ControllerProductProduct extends Controller {
 
 			// Set the last category breadcrumb
 			$category_info = $this->model_catalog_category->getCategory($category_id);
-
+                        $data = array(
+				'filter_category_id' => $category_id,	 
+			);
 			if ($category_info) {
 				$url = '';
 

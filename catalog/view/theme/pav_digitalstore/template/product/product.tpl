@@ -32,7 +32,7 @@
 
     
         <?php if ($thumb || $images) { ?>
-    <div class="col-lg-5 col-md-5 col-sm-5 col-xs-12 image-container">
+    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12 image-container">
         <?php if ($thumb) { ?>
         <div class="image">
 
@@ -49,7 +49,7 @@
           $eimages = array( 0=> array( 'popup'=>$popup,'thumb'=> $thumb )  ); 
           $images = array_merge( $eimages, $images );
         }
-        $icols = 3; $i= 0;
+        $icols = 6; $i= 0;
         foreach ($images as  $image) { ?>
           <?php if( (++$i)%$icols == 1 ) { ?>
           <div class="item">
@@ -75,7 +75,7 @@
      
          </div>
     <?php } ?>
-    <div class="col-lg-7 col-md-7 col-sm-7 col-xs-12">
+    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
 		 <h1><?php echo $heading_title; ?></h1>
 		 
       <?php if ($price) { ?>
@@ -116,6 +116,7 @@
         <span><?php echo $text_reward; ?></span> <?php echo $reward; ?><br />
         <?php } ?>
         <span><?php echo $text_stock; ?></span> <?php echo $stock; ?>
+                  <?php echo $description; ?>
       </div>
 	
      <?php if ($review_status) { ?>
@@ -313,7 +314,7 @@
     </div>
 	</div>
   </div>
-  <div class="tabs-group">
+  <!-- div class="tabs-group">
   <div id="tabs" class="htabs clearfix"><a href="#tab-description"><?php echo $tab_description; ?></a>
     <?php if ($attribute_groups) { ?>
     <a href="#tab-attribute"><?php echo $tab_attribute; ?></a>
@@ -390,14 +391,14 @@
         <?php echo html_entity_decode( $productConfig['product_customtab_content'][$languageID], ENT_QUOTES, 'UTF-8'); ?>
       </div></div>
    <?php } ?> 
-  </div>
+  </div-->
    
       <?php if ($products) { ?>
   <?php 
  	$cols = ($productConfig['product_related_column'] == 0)?3:$productConfig['product_related_column'];
   $span = 12/$cols; 
     ?>
-  <div class="product-related box">
+  <!--div class="product-related box">
    <div class="box-heading"><span><?php echo $tab_related; ?> (<?php echo count($products); ?>)</span></div>
    <div id="related" class="slide product-grid" data-interval="0">
     <div class="carousel-controls">
@@ -455,7 +456,7 @@
         <?php } ?>
   </div>
   </div>
-  </div>
+  </div-->
   <?php } ?>
   
   

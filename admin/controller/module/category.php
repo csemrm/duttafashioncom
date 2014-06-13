@@ -25,7 +25,8 @@ class ControllerModuleCategory extends Controller {
 		$this->data['text_content_bottom'] = $this->language->get('text_content_bottom');		
 		$this->data['text_column_left'] = $this->language->get('text_column_left');
 		$this->data['text_column_right'] = $this->language->get('text_column_right');
-
+                $this->data['text_mainmenu'] = $this->language->get('text_mainmenu');
+		$this->data['text_showcase'] = $this->language->get('text_showcase');
 		$this->data['entry_layout'] = $this->language->get('entry_layout');
 		$this->data['entry_position'] = $this->language->get('entry_position');
 		$this->data['entry_status'] = $this->language->get('entry_status');
