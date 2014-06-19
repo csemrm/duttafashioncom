@@ -312,11 +312,11 @@ $layoutMode = $helper->getParam( 'layout' );
                         <?php } 
                         if(count($modules)==2 && $i==1){
                         ?>	
-                        <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+                        <div class="right-panel col-lg-4 col-md-4 col-sm-12 col-xs-12">
                             <?php echo $module; ?>
                         </div>
                         <?php }else{ ?>
-                        <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12">
+                        <div class=" col-lg-8  col-md-8 col-sm-12 col-xs-12">
                             <?php echo $module; ?>
                         </div>
                         <?php }

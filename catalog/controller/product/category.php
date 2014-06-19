@@ -16,7 +16,11 @@ class ControllerProductCategory extends Controller {
         } else {
             $filter = '';
         }
-
+        if (isset($this->request->get['product_id'])) {
+            $selected_product_id = $this->request->get['product_id'];
+        } else {
+            $selected_product_id = '';
+        }
         if (isset($this->request->get['sort'])) {
             $sort = $this->request->get['sort'];
         } else {
@@ -90,7 +94,7 @@ class ControllerProductCategory extends Controller {
         } else {
             $categories = $this->model_catalog_category->getCategories();
 
-           $path= $category_id = $categories[0]['category_id'];
+            $path = $category_id = $categories[0]['category_id'];
         }
 
         $category_info = $this->model_catalog_category->getCategory($category_id);
@@ -108,6 +112,7 @@ class ControllerProductCategory extends Controller {
             }
 
             $this->data['heading_title'] = $category_info['name'];
+            $this->data['selected_product_id'] = $selected_product_id;
             $this->data['text_select'] = $this->language->get('text_select');
             $this->data['text_refine'] = $this->language->get('text_refine');
             $this->data['text_empty'] = $this->language->get('text_empty');

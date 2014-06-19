@@ -55,13 +55,19 @@ $productConfig = array_merge( $productConfig, $themeConfig );
                 $span = floor(12/$cols);
                 $small = floor(12/$MAX_ITEM_ROW_SMALL);
                 $mini = floor(12/$MAX_ITEM_ROW_MINI);
-                foreach ($products as $i => $product) { ?>
+                $selected_product = 0;
+                foreach ($products as $i => $product) { 
+                if($selected_product_id ==$product['product_id']){
+                $selected_product = $i+1;
+                }
+                
+                ?>
                 <?php if( $i++%$cols == 0 ) { ?>
                 <li class="row products-item">
                     <?php } ?>
                     <div class="col-xs-6 col-lg-<?php echo $span;?> col-sm-<?php echo $small;?> col-xs-<?php echo $mini;?>">
                         <div class="product-block clearfix ">	
-                            <div class="product-info">
+                            <div class="product-info" id="product_info_<?php echo $i; ?>">
                                 <div class="row">
 
                                     <?php if ($product['thumb'] || $product['images']) { ?>
@@ -82,7 +88,7 @@ $productConfig = array_merge( $productConfig, $themeConfig );
                                                 $eimages = array( 0=> array( 'popup'=>$product['popup'],'thumb'=> $product['thumb'] )  ); 
                                                 $images = array_merge( $eimages, $product['images'] );
                                                 } 
-                                                $icols = 4; $ii= 0; 
+                                                $icols = 7; $ii= 0; 
 
                                                 foreach ($images as  $image) { ?>
                                                 <?php if( (++$ii)%$icols == 1 ) { ?>
@@ -106,6 +112,55 @@ $productConfig = array_merge( $productConfig, $themeConfig );
                                         </script>
 
                                         <?php } ?>
+
+                                        <div class="measurement">
+                                            <p><strong>Measurement</strong></p>
+
+                                            <table cellpadding="0" cellspacing="0" class="measurement_box" style="width: 98%">
+                                                <tbody>
+                                                    <tr bgcolor="#dfdfdf" height="22">
+                                                        <td align="left">Size</td>
+                                                        <td align="center">S</td>
+                                                        <td align="center">M</td>
+                                                        <td align="center">L</td>
+                                                        <td align="center">XL</td>
+                                                        <td align="center">2XL</td>
+                                                        <td align="center">3XL</td>
+                                                    </tr>
+                                                    <tr bgcolor="#f9f9f9" height="22">
+                                                        <td align="left" id="length" style="border-bottom:solid 1px #CCC;" >Length</td>
+                                                        <td align="center" style="border-bottom:solid 1px #CCC;" >68</td>
+                                                        <td align="center" style="border-bottom:solid 1px #CCC;" >70</td>
+                                                        <td align="center" style="border-bottom:solid 1px #CCC;" >72</td>
+                                                        <td align="center" style="border-bottom:solid 1px #CCC;" >74</td>
+                                                        <td align="center" style="border-bottom:solid 1px #CCC;" >76</td>
+                                                        <td align="center" style="border-bottom:solid 1px #CCC;" >78</td>
+                                                    </tr>
+                                                    <tr bgcolor="#f9f9f9" height="22">
+                                                        <td align="left" id="length" style="border-bottom:solid 1px #CCC;" >Chest</td>
+                                                        <td align="center" style="border-bottom:solid 1px #CCC;" >49</td>
+                                                        <td align="center" style="border-bottom:solid 1px #CCC;" >52</td>
+                                                        <td align="center" style="border-bottom:solid 1px #CCC;" >55</td>
+                                                        <td align="center" style="border-bottom:solid 1px #CCC;" >58</td>
+                                                        <td align="center" style="border-bottom:solid 1px #CCC;" >60</td>
+                                                        <td align="center" style="border-bottom:solid 1px #CCC;" >62</td>
+                                                    </tr>
+                                                    <tr bgcolor="#f9f9f9" height="22">
+                                                        <td align="left" id="sleeve" >Sleeve</td>
+                                                        <td align="center">63</td>
+                                                        <td align="center">64</td>
+                                                        <td align="center">65</td>
+                                                        <td align="center">66</td>
+                                                        <td align="center">67</td>
+                                                        <td align="center">68</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+
+                                            <div class="iso">Our all production units are ISO,OekoTex,WAP Certified and BSCI Audited.<br />
+                                                <img alt="img" src="/image/data/iso.jpg" style="width: 327px; height: 62px;" /></div>
+                                        </div>
+
 
                                     </div>
                                     <?php } ?>
@@ -149,60 +204,11 @@ $productConfig = array_merge( $productConfig, $themeConfig );
                                             <?php echo $product['description']; ?>
                                         </div>
 
-                                        <div class="measurement">
-                                            <p><strong>Measurement</strong></p>
-
-                                            <table cellpadding="0" cellspacing="0" class="measurement_box" width="340">
-                                                <tbody>
-                                                    <tr bgcolor="#dfdfdf" height="22">
-                                                        <td align="left" width="65">Size</td>
-                                                        <td width="50">S</td>
-                                                        <td width="50">M</td>
-                                                        <td width="50">L</td>
-                                                        <td width="50">XL</td>
-                                                        <td width="50">2XL</td>
-                                                        <td width="50">3XL</td>
-                                                    </tr>
-                                                    <tr bgcolor="#f9f9f9" height="22">
-                                                        <td align="center" id="length" style="border-bottom:solid 1px #CCC;" width="65">Length</td>
-                                                        <td align="center" style="border-bottom:solid 1px #CCC;" width="65">68</td>
-                                                        <td align="center" style="border-bottom:solid 1px #CCC;" width="65">70</td>
-                                                        <td align="center" style="border-bottom:solid 1px #CCC;" width="65">72</td>
-                                                        <td align="center" style="border-bottom:solid 1px #CCC;" width="65">74</td>
-                                                        <td align="center" style="border-bottom:solid 1px #CCC;" width="65">76</td>
-                                                        <td align="center" style="border-bottom:solid 1px #CCC;" width="65">78</td>
-                                                    </tr>
-                                                    <tr bgcolor="#f9f9f9" height="22">
-                                                        <td align="left" id="length" style="border-bottom:solid 1px #CCC;" width="65">Chest</td>
-                                                        <td align="center" style="border-bottom:solid 1px #CCC;" width="65">49</td>
-                                                        <td align="center" style="border-bottom:solid 1px #CCC;" width="65">52</td>
-                                                        <td align="center" style="border-bottom:solid 1px #CCC;" width="65">55</td>
-                                                        <td align="center" style="border-bottom:solid 1px #CCC;" width="65">58</td>
-                                                        <td align="center" style="border-bottom:solid 1px #CCC;" width="65">60</td>
-                                                        <td align="center" style="border-bottom:solid 1px #CCC;" width="65">62</td>
-                                                    </tr>
-                                                    <tr bgcolor="#f9f9f9" height="22">
-                                                        <td align="left" id="sleeve" width="65">Sleeve</td>
-                                                        <td width="50">63</td>
-                                                        <td width="50">64</td>
-                                                        <td width="50">65</td>
-                                                        <td width="50">66</td>
-                                                        <td width="50">67</td>
-                                                        <td width="50">68</td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-
-                                            <div class="iso">Our all production units are ISO,OekoTex,WAP Certified and BSCI Audited.<br />
-                                                <img alt="img" src="/image/data/iso.jpg" style="width: 327px; height: 62px;" /></div>
-                                        </div>
-
-
                                         <?php if ($product['minimum'] > 1) { ?>
-                                        <div class="minimum"><?php echo $product['text_minimum']; ?></div>
+                                        <!--div class="minimum"><?php echo $product['text_minimum']; ?></div-->
                                         <?php } ?>
                                         <?php if ($product['profiles']): ?>
-                                        <div class="option">
+                                        <div class="option" style="margin-top: 10px">
                                             <!--h2><span class="required">*</span><?php echo $text_payment_profile ?></h2-->
                                             <select class="form-control" name="profile_id">
                                                 <option value=""><?php echo $text_select; ?></option>
@@ -363,7 +369,7 @@ $productConfig = array_merge( $productConfig, $themeConfig );
                                             <div class="product-action product-block">
                                                 <input type="hidden" name="product_id" size="2" value="<?php echo $product['product_id']; ?>" />
 
-                                                <div class="cart pull-left"><input type="button"  value="<?php echo $button_cart; ?>" id="button-cart" class="button" /></div>
+                                                <div class="cart pull-left"><input type="button"  value="<?php echo $button_cart; ?>" id="button-cart" cart_product_id="<?php echo $i; ?>"  class="button button-cart" /></div>
                                                 <div class="wishlist-compare pull-left">
                                                     <!-- <span>&nbsp;&nbsp;<?php //echo $text_or; ?>&nbsp;&nbsp;</span> -->
                                                     <span class="wishlist"><a class="fa fa-heart" onclick="addToWishList('<?php echo  $product['product_id']; ?>');" data-placement="top" data-toggle="tooltip" data-original-title="<?php echo $button_wishlist; ?>"><span><?php echo $button_wishlist; ?></span></a></span>
@@ -464,34 +470,35 @@ $productConfig = array_merge( $productConfig, $themeConfig );
 
 <script type="text/javascript"><!--
 
-            $('#button-cart').bind('click', function() {
-    $.ajax({
-    url: 'index.php?route=checkout/cart/add',
-            type: 'post',
-            data: $('.product-info input[type=\'text\'], .product-info input[type=\'hidden\'], .product-info input[type=\'radio\']:checked, .product-info input[type=\'checkbox\']:checked, .product-info select, .product-info textarea'),
-            dataType: 'json',
-            success: function(json) {
-            $('.success, .warning, .attention, information, .error').remove();
-                    if (json['error']) {
-            if (json['error']['option']) {
-            for (i in json['error']['option']) {
-            $('#option-' + i).after('<span class="error">' + json['error']['option'][i] + '</span>');
-            }
-            }
+            $('.button-cart').bind('click', function() {
+                id =  $(this).attr('cart_product_id');
+              $.ajax({
+                url: 'index.php?route=checkout/cart/add',
+                        type: 'post',
+                        data: $('#product_info_'+id+' input[type=\'text\'], #product_info_'+id+'  input[type=\'hidden\'], #product_info_'+id+'  input[type=\'radio\']:checked, #product_info_'+id+'  input[type=\'checkbox\']:checked, #product_info_'+id+'  select, #product_info_'+id+'  textarea'),
+                        dataType: 'json',
+                        success: function(json) {
+                        $('.success, .warning, .attention, information, .error').remove();
+                                if (json['error']) {
+                        if (json['error']['option']) {
+                        for (i in json['error']['option']) {
+                        $('#option-' + i).after('<span class="error">' + json['error']['option'][i] + '</span>');
+                        }
+                        }
 
-            if (json['error']['profile']) {
-            $('select[name="profile_id"]').after('<span class="error">' + json['error']['profile'] + '</span>');
-            }
-            }
+                        if (json['error']['profile']) {
+                        $('select[name="profile_id"]').after('<span class="error">' + json['error']['profile'] + '</span>');
+                        }
+                        }
 
-            if (json['success']) {
-            $('#notification').html('<div class="success" style="display: none;">' + json['success'] + '<img src="catalog/view/theme/default/image/close.png" alt="" class="close" /></div>');
-                    $('.success').fadeIn('slow');
-                    $('#cart-total').html(json['total']);
-                    $('html, body').animate({ scrollTop: 0 }, 'slow');
-            }
-            }
-    });
+                        if (json['success']) {
+                        $('#notification').html('<div class="success" style="display: none;">' + json['success'] + '<img src="catalog/view/theme/default/image/close.png" alt="" class="close" /></div>');
+                                $('.success').fadeIn('slow');
+                                $('#cart-total').html(json['total']);
+                                $('html, body').animate({ scrollTop: 0 }, 'slow');
+                        }
+                        }
+                });
     });//--></script>
 <script type="text/javascript"><!--
 
@@ -508,16 +515,16 @@ $productConfig = array_merge( $productConfig, $themeConfig );
                     carousel.clip.hover(function() {
                     carousel.stopAuto();
                     }, function() {
-                    carousel.startAuto();
+                   // carousel.startAuto();
                     });
             };
             $('#carousel ul.products-block').jcarousel({
-    vertical: false,
+            vertical: false,
             visible: 1,
             scroll: 1,
-            start: 1,
-            auto:2,
-            wrap: 'circular',
+            start: <?php echo $selected_product; ?>,
+            auto: <?php echo  $selected_product ==0? 1: 0 ; ?>, 
+            wrap: 'last',
             animation: 2000,
             initCallback: mycarousel_initCallback
     });
